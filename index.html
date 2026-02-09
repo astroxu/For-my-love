@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Khadidja 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Poppins", cursive;
+    background: radial-gradient(circle at top, #3b2d6b, #12002b);
+    color: white;
+    overflow-x: hidden;
+  }
+
+  .stars::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
+                      radial-gradient(1px 1px at 100px 150px, white, transparent),
+                      radial-gradient(2px 2px at 300px 80px, white, transparent),
+                      radial-gradient(1px 1px at 500px 200px, white, transparent);
+    background-size: 600px 400px;
+    animation: twinkle 8s infinite linear;
+    pointer-events: none;
+  }
+
+  @keyframes twinkle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-400px); }
+  }
+
+  .page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .active { display: flex; }
+
+  .card {
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 25px;
+    max-width: 420px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  }
+
+  h1 { font-size: 26px; }
+  p { opacity: 0.9; }
+
+  button {
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover { transform: scale(1.1); }
+
+  .yes { background: #ff4d6d; color: white; }
+  .no { background: #eee; color: black; position: relative; }
+
+  .gift {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px 0;
+    cursor: pointer;
+  }
+
+  img { max-width: 100%; border-radius: 15px; }
+
+  audio { width: 100%; margin-top: 10px; }
+</style>
+</head>
+
+<body class="stars">
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+  <div class="card">
+    <h1>Hey Khadidja ❤️</h1>
+    <p>I have a very important question for you..</p>
+    <p><em>You are saying yes I don’t care :D</em></p>
+    <h1>Will you be my Valentine? 💌</h1>
+    <button class="yes" onclick="go('p2')">YES 🥰</button>
+    <button class="no" onmouseover="move(this)">No 🙄</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <div class="card">
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="cat">
+    <h1>YAAAAY 🐱💙</h1>
+    <p>I got some gifts for you, would you want to open them?</p>
+    <button class="yes" onclick="go('p3')">YES 🎁</button>
+    <button class="no" onmouseover="move(this)">No 😏</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+  <div class="card">
+    <h1>Choose your gift 🎀</h1>
+
+    <div class="gift" onclick="go('gift1')">🎀 Gift One</div>
+    <div class="gift" onclick="go('gift2')">🎵 Gift Two</div>
+    <div class="gift" onclick="go('gift3')">💌 Gift Three</div>
+  </div>
+</div>
+
+<!-- GIFT 1 -->
+<div class="page" id="gift1">
+  <div class="card">
+    <h1>For my pretty princess 👑</h1>
+    <p>💐 Big bouquet of flowers</p>
+    <p>🎂 Chocolate cake</p>
+    <p>🍫 Kinder Bueno, KitKat, a Lindt chocolate bars</p>
+    <p>🍟 Chips & snacks</p>
+    <button class="yes" onclick="go('p3')">Back 🎁</button>
+  </div>
+</div>
+
+<!-- GIFT 2 -->
+<div class="page" id="gift2">
+  <div class="card">
+    <h1>This song reminds me of you 🎵</h1>
+    <p><strong>A Little Death – The Neighbourhood</strong></p>
+    <audio controls>
+      <source src="https://archive.org/download/TheNeighbourhoodALittleDeath/The%20Neighbourhood%20-%20A%20Little%20Death.mp3">
+    </audio>
+    <button class="yes" onclick="go('p3')">Back 🎁</button>
+  </div>
+</div>
+
+<!-- GIFT 3 -->
+<div class="page" id="gift3">
+  <div class="card">
+    <h1>A letter for you 💌</h1>
+    <p>
+      Khadidja, you mean more to me than words ever could.
+      Your presence softens my days and gives my heart peace.
+    </p>
+    <p style="text-transform: uppercase; font-size: 14px;">
+      IF ONLY YOU COULD SEE YOURSELF THROUGH MY EYES…  
+      YOU ARE GRACE MADE VISIBLE, A TESTAMENT TO DIVINE PATIENCE  
+      AND GENTLE DESIGN. IF ONLY YOU COULD SEE YOURSELF  
+      THROUGH MY EYES KHADIDJA.
+    </p>
+    <button class="yes" onclick="go('final')">One last thing… ✨</button>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="page" id="final">
+  <div class="card">
+    <h1>
+      Between all these stars, you are the shiniest ✨  
+      I love you Khadidja 💙  
+      Nhbk Khadidja
+    </h1>
+  </div>
+</div>
+
+<script>
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function move(btn) {
+  btn.style.transform = `translate(${Math.random()*100-50}px,${Math.random()*100-50}px)`;
+}
+</script>
+
+</body>
+</html>
