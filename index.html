@@ -2,89 +2,132 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Khadidja 💙</title>
+<title>For Khadidja ✨</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Poppins", cursive;
-    background: radial-gradient(circle at top, #3b2d6b, #12002b);
-    color: white;
-    overflow-x: hidden;
-  }
+/* ---------- BACKGROUND ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", serif;
+  background: radial-gradient(ellipse at bottom, #2b1055 0%, #090a0f 100%);
+  color: white;
+  overflow-x: hidden;
+}
 
-  .stars::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
-                      radial-gradient(1px 1px at 100px 150px, white, transparent),
-                      radial-gradient(2px 2px at 300px 80px, white, transparent),
-                      radial-gradient(1px 1px at 500px 200px, white, transparent);
-    background-size: 600px 400px;
-    animation: twinkle 8s infinite linear;
-    pointer-events: none;
-  }
+.stars, .stars2, .stars3 {
+  position: fixed;
+  inset: 0;
+  background-repeat: repeat;
+  pointer-events: none;
+}
 
-  @keyframes twinkle {
-    from { transform: translateY(0); }
-    to { transform: translateY(-400px); }
-  }
+.stars {
+  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/demo/stars.png");
+  animation: moveStars 200s linear infinite;
+}
 
-  .page {
-    min-height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
+.stars2 {
+  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/demo/stars2.png");
+  animation: moveStars 300s linear infinite;
+}
 
-  .active { display: flex; }
+.stars3 {
+  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/demo/stars3.png");
+  animation: moveStars 400s linear infinite;
+}
 
-  .card {
-    background: rgba(255,255,255,0.08);
-    padding: 30px;
-    border-radius: 25px;
-    max-width: 420px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.4);
-  }
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
 
-  h1 { font-size: 26px; }
-  p { opacity: 0.9; }
+/* ---------- GENERAL ---------- */
+.page {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
 
-  button {
-    padding: 12px 24px;
-    margin: 10px;
-    border-radius: 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
+.active { display: flex; }
 
-  button:hover { transform: scale(1.1); }
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 35px;
+  border-radius: 25px;
+  max-width: 500px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.6);
+}
 
-  .yes { background: #ff4d6d; color: white; }
-  .no { background: #eee; color: black; position: relative; }
+h1 { font-size: 26px; }
+p { opacity: 0.9; }
 
-  .gift {
-    background: rgba(255,255,255,0.15);
-    padding: 20px;
-    border-radius: 20px;
-    margin: 15px 0;
-    cursor: pointer;
-  }
+button {
+  padding: 14px 28px;
+  margin: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  img { max-width: 100%; border-radius: 15px; }
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
 
-  audio { width: 100%; margin-top: 10px; }
+.no {
+  background: #eee;
+  color: black;
+  position: relative;
+}
+
+button:hover { transform: scale(1.1); }
+
+/* ---------- GIFTS ---------- */
+.gifts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gift {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gift:hover { transform: scale(1.1); }
+
+.gift img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ---------- LETTER ---------- */
+.paper {
+  background: url("https://i.imgur.com/3ZQ3Z6p.png");
+  background-size: cover;
+  color: #3b2f1c;
+  padding: 35px;
+  border: 10px solid #7a5a2e;
+  border-radius: 20px;
+  font-family: "Times New Roman", serif;
+}
 </style>
 </head>
 
-<body class="stars">
+<body>
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
 
 <!-- PAGE 1 -->
 <div class="page active" id="p1">
@@ -101,9 +144,9 @@
 <!-- PAGE 2 -->
 <div class="page" id="p2">
   <div class="card">
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="cat">
-    <h1>YAAAAY 🐱💙</h1>
-    <p>I got some gifts for you, would you want to open them?</p>
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="200">
+    <h1>YAAAAY 🐱✨</h1>
+    <p>I got some gifts for you, want to open them?</p>
     <button class="yes" onclick="go('p3')">YES 🎁</button>
     <button class="no" onmouseover="move(this)">No 😏</button>
   </div>
@@ -112,11 +155,12 @@
 <!-- PAGE 3 -->
 <div class="page" id="p3">
   <div class="card">
-    <h1>Choose your gift 🎀</h1>
-
-    <div class="gift" onclick="go('gift1')">🎀 Gift One</div>
-    <div class="gift" onclick="go('gift2')">🎵 Gift Two</div>
-    <div class="gift" onclick="go('gift3')">💌 Gift Three</div>
+    <h1>Pick a gift 🎀</h1>
+    <div class="gifts">
+      <div class="gift" onclick="go('gift1')">🎁</div>
+      <div class="gift" onclick="go('gift2')">🎵</div>
+      <div class="gift" onclick="go('gift3')">💌</div>
+    </div>
   </div>
 </div>
 
@@ -124,10 +168,12 @@
 <div class="page" id="gift1">
   <div class="card">
     <h1>For my pretty princess 👑</h1>
-    <p>💐 Big bouquet of flowers</p>
-    <p>🎂 Chocolate cake</p>
-    <p>🍫 Kinder Bueno, KitKat, a Lindt chocolate bars</p>
-    <p>🍟 Chips & snacks</p>
+    <div class="gifts">
+      <img src="https://i.imgur.com/4YQZ6YF.jpg">
+      <img src="https://i.imgur.com/J8m0Zxk.jpg">
+      <img src="https://i.imgur.com/5K8nZ0N.jpg">
+      <img src="https://i.imgur.com/8tqZ8lQ.jpg">
+    </div>
     <button class="yes" onclick="go('p3')">Back 🎁</button>
   </div>
 </div>
@@ -136,28 +182,36 @@
 <div class="page" id="gift2">
   <div class="card">
     <h1>This song reminds me of you 🎵</h1>
-    <p><strong>A Little Death – The Neighbourhood</strong></p>
-    <audio controls>
-      <source src="https://archive.org/download/TheNeighbourhoodALittleDeath/The%20Neighbourhood%20-%20A%20Little%20Death.mp3">
-    </audio>
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/0cZ6oHqv4T6TtY6O2xKz8n"
+      width="100%" height="152" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
     <button class="yes" onclick="go('p3')">Back 🎁</button>
   </div>
 </div>
 
 <!-- GIFT 3 -->
 <div class="page" id="gift3">
-  <div class="card">
-    <h1>A letter for you 💌</h1>
+  <div class="paper">
     <p>
-      Khadidja, you mean more to me than words ever could.
-      Your presence softens my days and gives my heart peace.
+      Khadidja, you mean more to me than words can hold.
+      Your presence softens my days and steadies my heart.
     </p>
-    <p style="text-transform: uppercase; font-size: 14px;">
-      IF ONLY YOU COULD SEE YOURSELF THROUGH MY EYES…  
-      YOU ARE GRACE MADE VISIBLE, A TESTAMENT TO DIVINE PATIENCE  
-      AND GENTLE DESIGN. IF ONLY YOU COULD SEE YOURSELF  
-      THROUGH MY EYES KHADIDJA.
-    </p>
+   <p style="margin-top: 20px; font-size: 16px; line-height: 1.6;">
+  If only you could see yourself through my eyes, perhaps then you would understand
+  why I marvel at your beauty so quietly, why your presence steals my words,
+  while leaving my heart full of things it longs to say.
+  <br><br>
+  If you could see yourself through my eyes, you would understand why I believe in God,
+  because existence feels deliberate — crafted with intention, touched with care,
+  shaped by a hand that knew exactly what it was doing.
+  <br><br>
+  You are not an accident, you are grace made visible,
+  a testament to divine patience and gentle design.
+  <br><br>
+  <strong>IF ONLY YOU COULD SEE YOURSELF THROUGH MY EYES KHADIDJA</strong>
+</p>
     <button class="yes" onclick="go('final')">One last thing… ✨</button>
   </div>
 </div>
@@ -180,9 +234,8 @@ function go(id) {
 }
 
 function move(btn) {
-  btn.style.transform = `translate(${Math.random()*100-50}px,${Math.random()*100-50}px)`;
+  btn.style.transform = `translate(${Math.random()*120-60}px,${Math.random()*120-60}px)`;
 }
 </script>
-
 </body>
 </html>
